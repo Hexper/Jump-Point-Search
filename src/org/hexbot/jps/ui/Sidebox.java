@@ -15,12 +15,11 @@ import java.awt.event.ActionListener;
  * Time: 7:04 PM
  */
 public class Sidebox extends JPanel {
-
     public Sidebox(final GridPanel panel) {
         setLayout(null);
         setPreferredSize(new Dimension(100, 20));
 
-        JButton find = new JButton("Find");
+        final JButton find = new JButton("Find");
         find.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,7 +32,8 @@ public class Sidebox extends JPanel {
             }
 
         });
-        JButton clear = new JButton("Clear");
+
+        final JButton clear = new JButton("Clear");
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,6 +52,5 @@ public class Sidebox extends JPanel {
 
         add(find);
         add(clear);
-
     }
 }

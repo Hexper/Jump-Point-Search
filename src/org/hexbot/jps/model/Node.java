@@ -9,7 +9,6 @@ import java.awt.*;
  * Time: 6:35 PM
  */
 public class Node {
-
     public static final int SIZE = 20;
 
     // types
@@ -45,8 +44,7 @@ public class Node {
         return new Rectangle(x * SIZE, y * SIZE, SIZE, SIZE);
     }
 
-    public void draw(Graphics g, int height, int width) {
-
+    public void draw(final Graphics g) {
         g.fillRect(x * SIZE, y * SIZE, SIZE, SIZE);
         g.setColor(Color.BLACK);
         g.drawRect(x * SIZE, y * SIZE, SIZE, SIZE);
@@ -56,7 +54,7 @@ public class Node {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(final int type) {
         this.type = type;
     }
 
@@ -65,19 +63,19 @@ public class Node {
         return g;
     }
 
-    public void setG(double g) {
+    public void setG(final double g) {
         this.g = g;
     }
 
     public int getHeuristic(Node target) {
-        return 10 * ( (Math.abs(getX() - target.getX())) + (Math.abs(getY() - target.getY())) );
+        return 10 * ((Math.abs(x - target.getX())) + (Math.abs(y - target.getY())));
     }
 
     public double getF() {
         return f;
     }
 
-    public void setF(double f) {
+    public void setF(final double f) {
         this.f = f;
     }
 
@@ -85,7 +83,7 @@ public class Node {
         return parent;
     }
 
-    public void setParent(Node parent) {
+    public void setParent(final Node parent) {
         this.parent = parent;
     }
 }
