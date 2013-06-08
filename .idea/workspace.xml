@@ -4,11 +4,12 @@
     <list default="true" id="df3ffc8e-6173-4cdd-9a5e-d7172285f620" name="Default" comment="" />
     <ignored path="Jump Point Search.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Grid.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370658882176" ignored="false" />
-    <file path="/Node.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370659156320" ignored="false" />
-    <file path="/Sidebox.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370658483928" ignored="false" />
-    <file path="/GridPanel.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370659618591" ignored="false" />
+    <file path="/Grid.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370691488408" ignored="false" />
+    <file path="/Node.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370691189014" ignored="false" />
+    <file path="/Sidebox.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370691743834" ignored="false" />
+    <file path="/GridPanel.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370691500326" ignored="false" />
     <file path="/fragment.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370657723761" ignored="false" />
+    <file path="/AStar.java" changelist="df3ffc8e-6173-4cdd-9a5e-d7172285f620" time="1370691047621" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
       <file leaf-file-name="Grid.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="28" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+            <state line="29" column="40" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,19 +84,22 @@
       <file leaf-file-name="Sidebox.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/Sidebox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="17" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
+            <state line="42" column="44" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#347#355#0" expanded="true" />
+                <element signature="e#539#962#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
+                <element signature="e#1043#1512#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridPanel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GridPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/GridPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="30" selection-start="1064" selection-end="1064" vertical-scroll-proportion="1.915493">
+            <state line="38" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,8 +110,22 @@
       <file leaf-file-name="Node.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/model/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="19" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+            <state line="19" column="42" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AStar.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/searching/AStar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="3" selection-start="688" selection-end="2009" vertical-scroll-proportion="0.09577465">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#770#776#0" expanded="true" />
+                <element signature="e#832#838#0" expanded="true" />
+                <element signature="e#2583#2589#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,10 +142,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/org/hexbot/jps/Sidebox.java" />
         <option value="$PROJECT_DIR$/src/org/hexbot/jps/model/GridPanel.java" />
-        <option value="$PROJECT_DIR$/src/org/hexbot/jps/ui/Sidebox.java" />
-        <option value="$PROJECT_DIR$/src/org/hexbot/jps/Grid.java" />
         <option value="$PROJECT_DIR$/src/org/hexbot/jps/model/Node.java" />
+        <option value="$PROJECT_DIR$/src/org/hexbot/jps/Grid.java" />
         <option value="$PROJECT_DIR$/src/org/hexbot/jps/ui/GridPanel.java" />
+        <option value="$PROJECT_DIR$/src/org/hexbot/jps/ui/Sidebox.java" />
+        <option value="$PROJECT_DIR$/src/org/hexbot/jps/searching/AStar.java" />
       </list>
     </option>
   </component>
@@ -241,6 +260,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="searching" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jump Point Search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jump Point Search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -253,6 +294,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
@@ -281,7 +323,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Jump Point Search" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -412,13 +460,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996479" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -501,35 +549,50 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/model/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
+        <state line="19" column="42" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/Sidebox.java">
+    <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/GridPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
+        <state line="38" column="0" selection-start="967" selection-end="967" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#347#355#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="28" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+        <state line="29" column="40" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/GridPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/ui/Sidebox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="30" selection-start="1064" selection-end="1064" vertical-scroll-proportion="1.915493">
+        <state line="42" column="44" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#539#962#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#1043#1512#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/hexbot/jps/searching/AStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="3" selection-start="688" selection-end="2009" vertical-scroll-proportion="0.09577465">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#770#776#0" expanded="true" />
+            <element signature="e#832#838#0" expanded="true" />
+            <element signature="e#2583#2589#0" expanded="true" />
           </folding>
         </state>
       </provider>

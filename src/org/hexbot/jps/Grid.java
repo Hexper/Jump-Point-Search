@@ -20,18 +20,19 @@ public class Grid extends JFrame {
     public Grid() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        setResizable(false);
 
         JPanel panel = new JPanel();
         setContentPane(panel);
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
         GridPanel grid = new GridPanel();
-        Sidebox box = new Sidebox();
+        Sidebox box = new Sidebox(grid);
 
         panel.add(grid);
         panel.add(box);
 
-        setSize(276, 25 * 25);
+        setSize(600, 600);
         setVisible(true);
     }
 
