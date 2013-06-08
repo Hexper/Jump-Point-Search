@@ -23,12 +23,11 @@ public class Sidebox extends JPanel {
         find.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AStar aStar = new AStar(panel.getMap());
-                for(Node node : aStar.findPath()) {
+                final AStar aStar = new AStar(panel.getMap());
+                for(final Node node : aStar.findPath()) {
                     if(node.getType() != Node.START && node.getType() != Node.END)
                         node.setType(Node.TRAVERSED);
                 }
-                panel.repaint();
             }
 
         });
@@ -37,13 +36,12 @@ public class Sidebox extends JPanel {
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(Node[] nodes : panel.getMap()) {
-                    for(Node node : nodes) {
+                for(final Node[] nodes : panel.getMap()) {
+                    for(final Node node : nodes) {
                         if(node.getType() != Node.START && node.getType() != Node.END && node.getType() != Node.WALL)
                             node.setType(Node.NORMAL);
                     }
                 }
-                panel.repaint();
             }
         });
 

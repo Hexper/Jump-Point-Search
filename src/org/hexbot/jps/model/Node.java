@@ -11,7 +11,6 @@ import java.awt.*;
 public class Node {
     public static final int SIZE = 20;
 
-    // types
     public static final int NORMAL = 0;
     public static final int WALL = 1;
     public static final int START = 2;

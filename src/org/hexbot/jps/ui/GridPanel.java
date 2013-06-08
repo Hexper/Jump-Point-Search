@@ -1,6 +1,8 @@
 package org.hexbot.jps.ui;
 
 import org.hexbot.jps.model.Node;
+import org.hexbot.jps.ui.listeners.GridMouseListener;
+import org.hexbot.jps.ui.listeners.GridMouseMotionListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,38 +19,8 @@ public class GridPanel extends JPanel {
     private final Node[][] nodes = new Node[25][25];
 
     public GridPanel() {
-        addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                for (Node[] noders : nodes) {
-                    for (Node node : noders) {
-                        if (node.getRectangle().contains(e.getPoint())) {
-                            if (node.getType() == Node.START || node.getType() == Node.END) {
-                                return;
-                            }
-
-                            node.setType(node.getType() == Node.NORMAL ? Node.WALL : Node.NORMAL);
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-            }
-        });
+        addMouseListener(new GridMouseListener(nodes));
+        addMouseMotionListener(new GridMouseMotionListener(nodes));
 
         final Thread painter = new Thread(new Runnable() {
             @Override
@@ -85,8 +57,8 @@ public class GridPanel extends JPanel {
 
         g.setColor(Color.BLACK);
 
-        for (Node[] noders : nodes) {
-            for (Node node : noders) {
+        for (final Node[] noders : nodes) {
+            for (final Node node : noders) {
                 switch (node.getType()) {
                     case Node.NORMAL:
                         g.setColor(Color.WHITE);

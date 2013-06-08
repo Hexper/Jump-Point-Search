@@ -31,6 +31,16 @@ public class AStar {
         }
     }
 
+    private Node[] reconstuct(Node end) {
+        final ArrayList<Node> path = new ArrayList<Node>();
+        Node current = end.getParent();
+        while((current.getType() != Node.START)) {
+            path.add(current);
+            current = current.getParent();
+        }
+        return path.toArray(new Node[path.size()]);
+    }
+
     public Node[] findPath() {
         final LinkedList<Node> open = new LinkedList<Node>();
         final LinkedList<Node> closed = new LinkedList<Node>();
@@ -44,9 +54,7 @@ public class AStar {
             Node current = getBest(open);
 
             if (current.equals(end)) {
-                closed.add(current);
-
-                return closed.toArray(new Node[closed.size()]);
+                return reconstuct(current);
             }
 
             open.remove(current);
