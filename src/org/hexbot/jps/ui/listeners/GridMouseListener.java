@@ -1,7 +1,6 @@
 package org.hexbot.jps.ui.listeners;
 
 import org.hexbot.jps.model.Node;
-import org.hexbot.jps.ui.GridPanel;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -19,7 +18,6 @@ public class GridMouseListener implements MouseListener {
     public GridMouseListener(final Node[][] nodes) {
         this.nodes = nodes;
     }
-
 
     @Override
     public void mouseClicked(MouseEvent e) {

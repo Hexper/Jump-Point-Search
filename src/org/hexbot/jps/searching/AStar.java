@@ -34,7 +34,7 @@ public class AStar {
     private Node[] reconstuct(Node end) {
         final ArrayList<Node> path = new ArrayList<Node>();
         Node current = end.getParent();
-        while((current.getType() != Node.START)) {
+        while ((current.getType() != Node.START)) {
             path.add(current);
             current = current.getParent();
         }
@@ -69,7 +69,7 @@ public class AStar {
                     continue;
                 }
 
-                if (!open.contains(node) || tent_g  < node.getG()) {
+                if (!open.contains(node) || tent_g < node.getG()) {
                     node.setParent(current);
                     node.setG(tent_g);
                     node.setF(node.getG() + node.getHeuristic(end));
@@ -81,12 +81,12 @@ public class AStar {
             }
         }
 
-        return null;
+        return new Node[]{start};
     }
 
     private double distance(final Node from, final Node to) {
         double distX = from.getX() - to.getX();
-        double distY = from .getY() - to.getY();
+        double distY = from.getY() - to.getY();
 
         return Math.sqrt(((distX * distX) + (distY * distY)));
     }
@@ -110,53 +110,51 @@ public class AStar {
 
         final ArrayList<Node> adjacent = new ArrayList<Node>();
 
-        //LEFT
-        if(node.getX() > 0) {
+        if (node.getX() > 0) {
             adjacent.add(map[node.getX() - 1][node.getY()]);
             left = true;
         }
 
-        //RIGHT
-        if(node.getX() < map.length - 1) {
+        if (node.getX() < map.length - 1) {
             adjacent.add(map[node.getX() + 1][node.getY()]);
             right = true;
         }
 
-        //TOP
-        if(node.getY() > 0) {
+        if (node.getY() > 0) {
             adjacent.add(map[node.getX()][node.getY() - 1]);
             top = true;
         }
 
-        //BOTTOM
-        if(node.getY() < map.length - 1) {
+        if (node.getY() < map.length - 1) {
             adjacent.add(map[node.getX()][node.getY() + 1]);
             bottom = true;
         }
+        try {
+            final boolean wall1 = map[node.getX() + 1][node.getY()].getType() == Node.WALL;
+            final boolean wall2 = map[node.getX()][node.getY() - 1].getType() == Node.WALL;
+            final boolean wall3 = map[node.getX() - 1][node.getY()].getType() == Node.WALL;
+            final boolean wall4 = map[node.getX()][node.getY() + 1].getType() == Node.WALL;
 
-        final boolean wall1 = map[node.getX() + 1][node.getY()].getType() == Node.WALL;
-        final boolean wall2 = map[node.getX()][node.getY() - 1].getType() == Node.WALL;
-        final boolean wall3 = map[node.getX() - 1][node.getY()].getType() == Node.WALL;
-        final boolean wall4 = map[node.getX()][node.getY() + 1].getType() == Node.WALL;
-
-        if (top) {
-            if (right) {
-                if(!(wall1 && wall2))
-                    adjacent.add(map[node.getX() + 1][node.getY() - 1]);
-            } else if (left) {
-                if(!(wall3 && wall2))
-                    adjacent.add(map[node.getX() - 1][node.getY() - 1]);
+            if (top) {
+                if (right) {
+                    if (!(wall1 && wall2))
+                        adjacent.add(map[node.getX() + 1][node.getY() - 1]);
+                } else if (left) {
+                    if (!(wall3 && wall2))
+                        adjacent.add(map[node.getX() - 1][node.getY() - 1]);
+                }
             }
-        }
 
-        if (bottom) {
-            if (right) {
-                if(!(wall1 && wall4))
-                    adjacent.add(map[node.getX() + 1][node.getY() + 1]);
-            } else if (left) {
-                if(!(wall3 && wall4))
-                    adjacent.add(map[node.getX() - 1][node.getY() + 1]);
+            if (bottom) {
+                if (right) {
+                    if (!(wall1 && wall4))
+                        adjacent.add(map[node.getX() + 1][node.getY() + 1]);
+                } else if (left) {
+                    if (!(wall3 && wall4))
+                        adjacent.add(map[node.getX() - 1][node.getY() + 1]);
+                }
             }
+        } catch (Exception e) {
         }
 
         return adjacent.toArray(new Node[adjacent.size()]);

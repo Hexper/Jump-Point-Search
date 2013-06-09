@@ -35,6 +35,6 @@ public class Grid extends JFrame {
     }
 
     public static void main(String[] args) {
-       new Grid();
+        new Grid();
     }
 }

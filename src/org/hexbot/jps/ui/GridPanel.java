@@ -6,8 +6,6 @@ import org.hexbot.jps.ui.listeners.GridMouseMotionListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,7 +26,7 @@ public class GridPanel extends JPanel {
                 while (isVisible()) {
                     repaint();
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(30);
                     } catch (InterruptedException ignored) {
                     }
                 }
@@ -39,8 +37,8 @@ public class GridPanel extends JPanel {
         painter.setPriority(Thread.MIN_PRIORITY);
         painter.start();
 
-        for(int i = 0; i < nodes.length; i++) {
-            for(int j = 0; j < nodes[i].length; j++) {
+        for (int i = 0; i < nodes.length; i++) {
+            for (int j = 0; j < nodes[i].length; j++) {
                 nodes[i][j] = new Node(i, j);
             }
         }
@@ -66,22 +64,39 @@ public class GridPanel extends JPanel {
 
                     case Node.START:
                         g.setColor(Color.GREEN);
-                         break;
+                        break;
 
                     case Node.END:
+                        Stroke stroke = g.getStroke();
+                        g.setStroke(new BasicStroke(2));
+                        g.setColor(Color.YELLOW);
+                        Node parent = node.getParent();
+                        if (parent != null) {
+                            g.drawLine((int) parent.getRectangle().getCenterX(), (int) parent.getRectangle().getCenterY(),
+                                    (int) node.getRectangle().getCenterX(), (int) node.getRectangle().getCenterY());
+                        }
                         g.setColor(Color.RED);
-                         break;
+                        g.setStroke(stroke);
+                        break;
 
                     case Node.WALL:
                         g.setColor(Color.GRAY);
                         break;
 
                     case Node.TRAVERSED:
-                        g.setColor(Color.BLUE);
+                        stroke = g.getStroke();
+                        parent = node.getParent();
+                        g.setStroke(new BasicStroke(2));
+                        g.setColor(Color.YELLOW);
+                        if (parent != null)
+                            g.drawLine((int) parent.getRectangle().getCenterX(), (int) parent.getRectangle().getCenterY(),
+                                    (int) node.getRectangle().getCenterX(), (int) node.getRectangle().getCenterY());
+
+                        g.setStroke(stroke);
                         break;
                 }
-
-                node.draw(g);
+                if (node.getType() != Node.TRAVERSED)
+                    node.draw(g);
             }
         }
     }

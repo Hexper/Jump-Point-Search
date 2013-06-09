@@ -10,17 +10,13 @@ import java.awt.*;
  */
 public class Node {
     public static final int SIZE = 20;
-
     public static final int NORMAL = 0;
     public static final int WALL = 1;
     public static final int START = 2;
     public static final int END = 3;
     public static final int TRAVERSED = 4;
-
-
     private final int x;
     private final int y;
-
     private int type = 0;
     private double g;
     private double f;
@@ -56,7 +52,6 @@ public class Node {
     public void setType(final int type) {
         this.type = type;
     }
-
 
     public double getG() {
         return g;

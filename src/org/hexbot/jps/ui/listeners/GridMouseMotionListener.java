@@ -1,7 +1,6 @@
 package org.hexbot.jps.ui.listeners;
 
 import org.hexbot.jps.model.Node;
-import org.hexbot.jps.ui.GridPanel;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -15,14 +14,12 @@ import java.awt.event.MouseMotionListener;
  */
 public class GridMouseMotionListener implements MouseMotionListener {
 
-    private Rectangle last = null;
-
     private final Node[][] nodes;
+    private Rectangle last = null;
 
     public GridMouseMotionListener(final Node[][] nodes) {
         this.nodes = nodes;
     }
-
 
     @Override
     public void mouseDragged(MouseEvent e) {

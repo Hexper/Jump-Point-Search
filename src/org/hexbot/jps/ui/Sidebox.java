@@ -24,21 +24,21 @@ public class Sidebox extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 final AStar aStar = new AStar(panel.getMap());
-                for(final Node node : aStar.findPath()) {
-                    if(node.getType() != Node.START && node.getType() != Node.END)
+
+                for (final Node node : aStar.findPath()) {
+                    if (node.getType() != Node.START && node.getType() != Node.END)
                         node.setType(Node.TRAVERSED);
                 }
             }
-
         });
 
         final JButton clear = new JButton("Clear");
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(final Node[] nodes : panel.getMap()) {
-                    for(final Node node : nodes) {
-                        if(node.getType() != Node.START && node.getType() != Node.END && node.getType() != Node.WALL)
+                for (final Node[] nodes : panel.getMap()) {
+                    for (final Node node : nodes) {
+                        if (node.getType() != Node.START && node.getType() != Node.END && node.getType() != Node.WALL)
                             node.setType(Node.NORMAL);
                     }
                 }
