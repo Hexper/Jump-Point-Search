@@ -134,19 +134,28 @@ public class AStar {
             bottom = true;
         }
 
+        final boolean wall1 = map[node.getX() + 1][node.getY()].getType() == Node.WALL;
+        final boolean wall2 = map[node.getX()][node.getY() - 1].getType() == Node.WALL;
+        final boolean wall3 = map[node.getX() - 1][node.getY()].getType() == Node.WALL;
+        final boolean wall4 = map[node.getX()][node.getY() + 1].getType() == Node.WALL;
+
         if (top) {
             if (right) {
-                adjacent.add(map[node.getX() + 1][node.getY() - 1]);
+                if(!(wall1 && wall2))
+                    adjacent.add(map[node.getX() + 1][node.getY() - 1]);
             } else if (left) {
-                adjacent.add(map[node.getX() - 1][node.getY() - 1]);
+                if(!(wall3 && wall2))
+                    adjacent.add(map[node.getX() - 1][node.getY() - 1]);
             }
         }
 
         if (bottom) {
             if (right) {
-                adjacent.add(map[node.getX() + 1][node.getY() + 1]);
+                if(!(wall1 && wall4))
+                    adjacent.add(map[node.getX() + 1][node.getY() + 1]);
             } else if (left) {
-                adjacent.add(map[node.getX() - 1][node.getY() + 1]);
+                if(!(wall3 && wall4))
+                    adjacent.add(map[node.getX() - 1][node.getY() + 1]);
             }
         }
 

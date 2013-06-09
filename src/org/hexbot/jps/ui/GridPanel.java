@@ -28,7 +28,7 @@ public class GridPanel extends JPanel {
                 while (isVisible()) {
                     repaint();
                     try {
-                        Thread.sleep(30);
+                        Thread.sleep(10);
                     } catch (InterruptedException ignored) {
                     }
                 }
