@@ -18,6 +18,7 @@ public class Node implements Comparable {
     private final int x;
     private final int y;
     private boolean touched;
+    private boolean closed;
     private int type = 0;
     private double h;
     private double g;
@@ -97,6 +98,14 @@ public class Node implements Comparable {
 
     public void touch() {
         touched = true;
+    }
+
+    public void close() {
+        closed = true;
+    }
+
+    public boolean isClosed() {
+        return closed;
     }
 
     public boolean isWalkable() {
