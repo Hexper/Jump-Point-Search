@@ -17,6 +17,7 @@ public class Node implements Comparable {
     public static final int TRAVERSED = 4;
     private final int x;
     private final int y;
+    private boolean touched;
     private int type = 0;
     private double g;
     private double f;
@@ -79,6 +80,18 @@ public class Node implements Comparable {
 
     public void setParent(final Node parent) {
         this.parent = parent;
+    }
+
+    public void unTouch() {
+        touched = false;
+    }
+
+    public void touch() {
+        touched = true;
+    }
+
+    public boolean hasTouched() {
+        return touched;
     }
 
     @Override
