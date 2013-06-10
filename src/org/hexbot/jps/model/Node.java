@@ -90,6 +90,10 @@ public class Node implements Comparable {
         touched = true;
     }
 
+    public boolean isWalkable() {
+        return type != WALL;
+    }
+
     public boolean hasTouched() {
         return touched;
     }
