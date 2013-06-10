@@ -32,6 +32,10 @@ public class Grid {
         this.end = end;
     }
 
+    public Node get(final int x, final int y) {
+        return inGrid(x, y) ? nodes2d[x][y] : null;
+    }
+
     public Node getStart() {
         return start;
     }
