@@ -37,15 +37,11 @@ public class Grid {
     }
 
     public boolean isStart(final int x, final int y) {
-        if (x >= size || y >= size || x < 0 || y < 0) {
-            return false;
-        }
-
-        return isStart(nodes2d[x][y]);
+        return inGrid(x, y) && isStart(nodes2d[x][y]);
     }
 
     public boolean isStart(final Node node) {
-        return shouldWalk(node);
+        return node.getType() == Node.START;
     }
 
     public Node getEnd() {
@@ -53,15 +49,11 @@ public class Grid {
     }
 
     public boolean isEnd(final int x, final int y) {
-        if (x >= size || y >= size || x < 0 || y < 0) {
-            return false;
-        }
-
-        return isEnd(nodes2d[x][y]);
+        return inGrid(x, y) && isEnd(nodes2d[x][y]);
     }
 
     public boolean isEnd(final Node node) {
-        return shouldWalk(node);
+        return node.getType() == Node.END;
     }
 
     public boolean shouldWalk(final Node node) {
@@ -69,10 +61,10 @@ public class Grid {
     }
 
     public boolean isWalkable(final int x, final int y) {
-        if (x >= size || y >= size || x < 0 || y < 0) {
-            return false;
-        }
+        return inGrid(x, y) && nodes2d[x][y].getType() != Node.WALL;
+    }
 
-        return nodes2d[x][y].getType() != Node.WALL;
+    public boolean inGrid(final int x, final int y) {
+        return (x >= size || y >= size || x < 0 || y < 0);
     }
 }
