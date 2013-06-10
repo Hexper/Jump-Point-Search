@@ -19,6 +19,7 @@ public class Node implements Comparable {
     private final int y;
     private boolean touched;
     private int type = 0;
+    private double h;
     private double g;
     private double f;
     private Node parent;
@@ -60,6 +61,14 @@ public class Node implements Comparable {
 
     public void setG(final double g) {
         this.g = g;
+    }
+
+    public double getH() {
+        return h;
+    }
+
+    public void setH(final double h) {
+        this.h = h;
     }
 
     public int getHeuristic(Node target) {
