@@ -13,8 +13,8 @@ import java.awt.*;
  * Date: 6/7/13
  * Time: 6:34 PM
  */
-public class Grid extends JFrame {
-    public Grid() {
+public class PathFinderGUI extends JFrame {
+    public PathFinderGUI() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setResizable(false);
@@ -35,6 +35,6 @@ public class Grid extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Grid();
+        new PathFinderGUI();
     }
 }
