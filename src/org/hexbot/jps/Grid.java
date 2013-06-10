@@ -1,7 +1,7 @@
 package org.hexbot.jps;
 
 import org.hexbot.jps.ui.GridPanel;
-import org.hexbot.jps.ui.Sidebox;
+import org.hexbot.jps.ui.SideBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +24,7 @@ public class Grid extends JFrame {
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
         final GridPanel grid = new GridPanel();
-        final Sidebox box = new Sidebox(grid);
+        final SideBox box = new SideBox(grid);
 
         panel.add(grid);
         panel.add(box);

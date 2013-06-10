@@ -14,8 +14,8 @@ import java.awt.event.ActionListener;
  * Date: 6/7/13
  * Time: 7:04 PM
  */
-public class Sidebox extends JPanel {
-    public Sidebox(final GridPanel panel) {
+public class SideBox extends JPanel {
+    public SideBox(final GridPanel panel) {
         setLayout(null);
         setPreferredSize(new Dimension(100, 20));
 
