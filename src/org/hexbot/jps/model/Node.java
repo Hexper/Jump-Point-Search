@@ -8,7 +8,7 @@ import java.awt.*;
  * Date: 6/7/13
  * Time: 6:35 PM
  */
-public class Node {
+public class Node implements Comparable {
     public static final int SIZE = 20;
     public static final int NORMAL = 0;
     public static final int WALL = 1;
@@ -79,5 +79,15 @@ public class Node {
 
     public void setParent(final Node parent) {
         this.parent = parent;
+    }
+
+    @Override
+    public int compareTo(final Object o) {
+        if (!(o instanceof Node)) {
+            throw new RuntimeException("Node not being compared to Node");
+        }
+
+        final Node n = (Node) o;
+        return (int) (this.f - n.f);
     }
 }
