@@ -11,7 +11,7 @@ import java.util.LinkedList;
  * Date: 6/8/13
  * Time: 3:38 AM
  */
-public class AStar {
+public class AStar implements Searchable {
 
     private final Node[][] map;
     private Node start;
@@ -41,6 +41,7 @@ public class AStar {
         return path.toArray(new Node[path.size()]);
     }
 
+    @Override
     public Node[] findPath() {
         final LinkedList<Node> open = new LinkedList<Node>();
         final LinkedList<Node> closed = new LinkedList<Node>();
