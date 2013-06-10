@@ -1,5 +1,7 @@
 package org.hexbot.jps.model;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -30,6 +32,52 @@ public class Grid {
 
         end.setType(Node.END);
         this.end = end;
+    }
+
+    public Node[] getNeighbors(final Node node) {
+        final ArrayList<Node> nodes = new ArrayList<>();
+
+        final int x = node.getX();
+        final int y = node.getY();
+        final boolean[] flags = new boolean[8];
+        final byte NW = 0, N = 0, NE = 1, E = 1, SE = 2, S = 2, SW = 3, W = 3;
+
+        if (isWalkable(x, y - 1)) {
+            nodes.add(get(x, y - 1));
+            flags[N] = true;
+        }
+
+        if (isWalkable(x + 1, y - 1)) {
+            nodes.add(get(x + 1, y - 1));
+            flags[NE] = true;
+        }
+
+        if (isWalkable(x + 1, y)) {
+            nodes.add(get(x + 1, y));
+            flags[E] = true;
+        }
+
+        if (isWalkable(x + 1, y + 1)) {
+            nodes.add(get(x + 1, y + 1));
+            flags[SE] = true;
+        }
+
+        if (isWalkable(x, y + 1)) {
+            nodes.add(get(x, y + 1));
+            flags[S] = true;
+        }
+
+        if (isWalkable(x - 1, y + 1)) {
+            nodes.add(get(x - 1, y + 1));
+            flags[SW] = true;
+        }
+
+        if (isWalkable(x - 1, y)) {
+            nodes.add(get(x - 1, y));
+            flags[W] = true;
+        }
+
+        return nodes.toArray(new Node[nodes.size()]);
     }
 
     public Node get(final int x, final int y) {
